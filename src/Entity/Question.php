@@ -30,6 +30,7 @@ class Question
     public function __construct()
     {
         $this->categories = new ArrayCollection();
+        $this->status = true;
     }
 
     public function getId(): ?int
