@@ -4,17 +4,30 @@
 {% endblock %}
 
 {% block body %}
-	<div class="accordion" id="accordionExample">
+	<div class="accordion container-sm" id="faq">
 		{% for question in questions %}
 			<div class="accordion-item">
-				<h2 class="accordion-header" id="headingOne">
-					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#response-{{question.id}}" aria-expanded="false" aria-controls="collapseOne">
-						{{question.label}}
-					</button>
-				</h2>
-				<div id="response-{{question.id}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+				<div class="d-flex justify-content-between">
+					<div class="accordion-header w-75" id="heading-{{question.id}}">
+						<h2>
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#response-{{question.id}}" aria-expanded="false" aria-controls="response-{{question.id}}">
+								{{question.label}}
+							</button>
+						</h2>
+					</div>
+					<div class="d-flex align-items-center pe-3">
+						<a class="btn btn-primary" href="{{path('question-edit',{id: question.id})}}" role="button">Editer</a>
+					</div>
+				</div>
+
+				<div id="response-{{question.id}}" class="accordion-collapse collapse" aria-labelledby="heading-{{question.id}}" data-bs-parent="#faq">
 					<div class="accordion-body">
-						{{question.response}}
+						<div>{{question.response}}</div>
+						<div class="pt-3">
+							{% for category in question.categories %}
+								<span class="badge rounded-pill bg-warning text-dark">{{category.label}}</span>
+							{% endfor %}
+						</div>
 					</div>
 				</div>
 			</div>

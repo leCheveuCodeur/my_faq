@@ -23,10 +23,12 @@ class QuestionController extends AbstractController
         ]);
     }
 
-    #[Route('/question/add', name: 'question-add')]
-    public function add(Request $request, EntityManagerInterface $em): Response
+    #[Route('/question/edit{id<\d+>}', name: 'question-edit')]
+    public function add(Request $request, EntityManagerInterface $em, ?Question $question = null): Response
     {
-        $question = new Question();
+        if (!isset($question)) {
+            $question = new Question();
+        }
 
         $form = $this->createForm(QuestionType::class, $question);
         $form->handleRequest($request);
