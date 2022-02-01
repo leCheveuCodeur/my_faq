@@ -23,7 +23,7 @@ class QuestionController extends AbstractController
         ]);
     }
 
-    #[Route('/question/edit{id<\d+>}', name: 'question-edit')]
+    #[Route('/question/edit{id<\d+>?}', name: 'question-edit')]
     public function edit(Request $request, EntityManagerInterface $em, ?Question $question = null): Response
     {
         if (!isset($question)) {
