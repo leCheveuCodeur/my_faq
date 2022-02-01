@@ -24,7 +24,7 @@ class QuestionController extends AbstractController
     }
 
     #[Route('/question/edit{id<\d+>}', name: 'question-edit')]
-    public function add(Request $request, EntityManagerInterface $em, ?Question $question = null): Response
+    public function edit(Request $request, EntityManagerInterface $em, ?Question $question = null): Response
     {
         if (!isset($question)) {
             $question = new Question();
@@ -40,7 +40,7 @@ class QuestionController extends AbstractController
             return $this->redirectToRoute('question', [],);
         }
 
-        return $this->renderForm('question/add.html.twig', [
+        return $this->renderForm('question/edit.html.twig', [
             'form' => $form,
         ]);
     }
