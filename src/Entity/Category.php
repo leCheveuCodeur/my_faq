@@ -18,7 +18,7 @@ class Category
     #[ORM\Column(type: 'string', length: 255)]
     private $label;
 
-    #[ORM\ManyToMany(targetEntity: Question::class, mappedBy: 'category')]
+    #[ORM\ManyToMany(targetEntity: Question::class, mappedBy: 'categories', cascade: ['persist'])]
     private $questions;
 
     public function __construct()

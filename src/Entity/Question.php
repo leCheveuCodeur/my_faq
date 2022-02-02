@@ -21,7 +21,7 @@ class Question
     #[ORM\Column(type: 'text', nullable: true)]
     private $response;
 
-    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'questions')]
+    #[ORM\ManyToMany(targetEntity: Category::class, inversedBy: 'questions', cascade:['persist'])]
     private $categories;
 
     #[ORM\Column(type: 'boolean')]
