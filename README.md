@@ -4,9 +4,7 @@
 
 This project is a test of speed for me
 
-## How it work
-
-Build with
+## Build with
 
 ### Server :
 
