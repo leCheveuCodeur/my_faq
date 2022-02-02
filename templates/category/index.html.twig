@@ -8,7 +8,7 @@
 		<ul class="list-group">
 			{% for category in categories %}
 				<div class="d-flex">
-					<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+					<a href="{{ path('question-category',{id: category.id}) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 						{{category.label}}
 						<span class="badge bg-primary rounded-pill">{{category.questions.count}}</span>
 					</a>

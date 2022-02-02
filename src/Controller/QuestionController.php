@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Question;
 use App\Form\QuestionType;
 use App\Repository\QuestionRepository;
@@ -23,7 +24,7 @@ class QuestionController extends AbstractController
         ]);
     }
 
-    #[Route('/question/edit{id<\d+>?}', name: 'question-edit')]
+    #[Route('/question/edit_{id<\d+>?}', name: 'question-edit')]
     public function edit(Request $request, EntityManagerInterface $em, ?Question $question = null): Response
     {
         if (!isset($question)) {
@@ -42,6 +43,16 @@ class QuestionController extends AbstractController
 
         return $this->renderForm('question/edit.html.twig', [
             'form' => $form,
+        ]);
+    }
+
+    #[Route('/question/category_{id<\d+>?}', name: 'question-category')]
+    public function viewByCategory(Category $category): Response
+    {
+        $questions = $category->getQuestions();
+
+        return $this->render('question/index.html.twig', [
+            'questions' => $questions,
         ]);
     }
 }

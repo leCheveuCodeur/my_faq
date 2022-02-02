@@ -23,7 +23,7 @@ class CategoryController extends AbstractController
         ]);
     }
 
-    #[Route('/category/edit{id<\d+>?}', name: 'category-edit')]
+    #[Route('/category/edit_{id<\d+>?}', name: 'category-edit')]
     public function edit(Request $request, EntityManagerInterface $em, ?Category $category = null): Response
     {
         if (!isset($category)) {
