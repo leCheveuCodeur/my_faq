@@ -18,7 +18,7 @@ This project is a test of speed for me
 - [Symfony 6.0.4](https://symfony.com/)
 
 * [Composer](https://getcomposer.org/download/)
-* [FakerPHP/Faker v1.15.0](https://packagist.org/packages/fakerphp/faker)
+* [FakerPHP/Faker v1.18.0](https://packagist.org/packages/fakerphp/faker)
 * [Bootstrap v5.1.3](https://getbootstrap.com/)
 
 ## Installation
@@ -53,6 +53,12 @@ php bin/console d:d:c
 
 ```
 php bin/console d:m:m
+```
+
+3 - and install fixturesfor have first contents and your Admin account :
+
+```
+php bin/console d:f:l -n
 ```
 
 ### And Voilà !
