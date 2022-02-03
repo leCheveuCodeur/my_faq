@@ -4,5 +4,12 @@
 {% endblock %}
 
 {% block body %}
-	<p class="text-center">{{stringReverse}}</p>
-{% endblock %}
+	<div class="container-sm w-75">
+		{{ form(form) }}
+			{% if stringReverse is not empty %}
+				<div class="alert alert-success" role="alert">
+					{{stringReverse}}
+				</div>
+			{% endif %}
+		</div>
+	{% endblock %}

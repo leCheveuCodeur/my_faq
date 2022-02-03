@@ -4,6 +4,11 @@ namespace App\Service;
 
 class ReverseHelper
 {
+    /**
+     * Return the inverse of string
+     * @param string $string
+     * @return string
+     */
     public function reverse(string $string): string
     {
         $result = array_reverse(explode(' ', $string));
