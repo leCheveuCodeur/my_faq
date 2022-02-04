@@ -55,7 +55,7 @@ php bin/console d:d:c
 php bin/console d:m:m
 ```
 
-3 - and install fixturesfor have first contents and your Admin account :
+3 - and install fixtures for have first contents:
 
 ```
 php bin/console d:f:l -n
