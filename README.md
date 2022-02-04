@@ -1,4 +1,4 @@
-# My FAQ 
+# My FAQ
 
 ## Description
 
@@ -62,3 +62,13 @@ php bin/console d:f:l -n
 ```
 
 ### And Voilà !
+
+## How to use it ?
+
+On the home page or in the 'Categories' tab, you will find the existing categories and a badge for each of them, indicating the number of questions.
+
+It is possible to select a category to see the questions attached to it or to edit the category directly.
+
+In the "Questions" tab, you will find all the questions with their visibility status as well as their answers and associated categories in the collapsible part.
+
+It is possible to edit directly a question/answer or to find all the questions/answers of the same category by clicking on one of the category badges associated to a question/answer.
