@@ -13,6 +13,7 @@
 						<span class="badge bg-primary rounded-pill">{{category.questions.count}}</span>
 					</a>
 					<a class="btn btn-primary m-1" href="{{path('category-edit',{id: category.id})}}" role="button">Editer</a>
+					<a class="btn btn-danger m-1" href="{{path('category-delete',{id: category.id})}}" role="button">Supprimer</a>
 				</div>
 
 			{% endfor %}
