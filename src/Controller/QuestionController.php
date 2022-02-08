@@ -55,4 +55,13 @@ class QuestionController extends AbstractController
             'questions' => $questions,
         ]);
     }
+
+    #[Route('/question/delete_{id<\d+>}', name: 'question-delete')]
+    public function delete(EntityManagerInterface $em, Question $question): Response
+    {
+        $em->remove($question);
+        $em->flush();
+
+        return $this->redirectToRoute('question');
+    }
 }
