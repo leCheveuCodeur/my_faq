@@ -18,8 +18,15 @@
 	</head>
 	<body>
 		{% include "_navbar.html.twig" %}
-		<div class="container-fluid py-4"> {% block body %}{% endblock %}
+		<div class="container-fluid py-4">
+			<div class="text-center">
+				<a class="btn btn-primary my-2  mx-auto" href="{{path('category-edit')}}" role="button">Ajouter une Catégorie</a>
+				<a class="btn btn-primary my-2  mx-auto" href="{{path('question-edit')}}" role="button">Ajouter une Question</a>
 			</div>
 
-		</body>
-	</html>
+
+			{% block body %}{% endblock %}
+		</div>
+
+	</body>
+</html>
